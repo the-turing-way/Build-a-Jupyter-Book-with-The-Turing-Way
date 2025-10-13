@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>reveal.js</title>
+
+        <link rel="stylesheet" href="reveal.js/dist/reset.css">
+        <link rel="stylesheet" href="reveal.js/dist/reveal.css">
+        <link rel="stylesheet" href="reveal.js/dist/theme/black.css">
+
+        <!-- Theme used for syntax highlighted code -->
+        <link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="assets/fontawesome/css/all.css">
+
+        <!-- Custom styling -->
+        <style>
+            /* Capitalise headings */
+            .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+                text-transform: capitalize;
+            }
+            /* Set caption text size */
+            figcaption {
+                font-size: medium;
+            }
+            /* Align text in tables */
+            .reveal table td, .reveal table th {
+                text-align: center;
+            }
+            /* Columns div definition */
+            div.columns{
+                display: flex;
+                gap: min(4vw, 1.5em);
+            }
+            div.column{
+                flex: auto;
+                overflow-x: auto;
+            }
+            /* Blur fragment */
+            .fragment.blur {
+                filter: blur(8px);
+            }
+            .fragment.blur.visible {
+                filter: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>Slide 1</section>
+                <section>Slide 2</section>
+            </div>
+        </div>
+
+        <script src="reveal.js/dist/reveal.js"></script>
+        <script src="reveal.js/plugin/notes/notes.js"></script>
+        <script src="reveal.js/plugin/markdown/markdown.js"></script>
+        <script src="reveal.js/plugin/highlight/highlight.js"></script>
+        <script>
+            // More info about initialization & config:
+            // - https://revealjs.com/initialization/
+            // - https://revealjs.com/config/
+            Reveal.initialize({
+                hash: true,
+
+                // Learn about plugins: https://revealjs.com/plugins/
+                plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+            });
+        </script>
+    </body>
+</html>
