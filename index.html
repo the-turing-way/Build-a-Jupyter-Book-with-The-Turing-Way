@@ -145,6 +145,10 @@
                                 - Inline code using the `eval` role
                             - Can execute at build time with a local Jupyter server and kernel
                             - Can execute on the page by connecting to a Jupyter server and kernel (_e.g._ MyBinder)
+                            - Uses
+                                - Interactive demos for readers
+                                - Curating data stories
+                                - Presenting research in a reproducible format
                         </aside>
                     </section>
                     <section>
@@ -156,9 +160,14 @@
                         </ul>
                         <aside data-markdown class="notes">
                             - Powerful and flexible plugin system
+                                - Add custom functionality and helpers
+                                - Can be written in Python or JS
                             - Reusable: content can be referenced or embedded from other Jupyter Books
+                                - Contribute to a network of books
+                                - Don't reinvent the wheel
                             - Exports to HTML, PDF (LaTeX and Typst), word, JATS
                                 - Through intermediate AST
+                                - Suitable for websites, portable/printable documents, journals
                         </aside>
                     </section>
                     <section>
@@ -179,6 +188,11 @@
                             - History:
                                 - Jupyter Book 1, based on Sphinx documentation engine, supported MyST Markdown input through myst-parser
                                 - Jupyter Book 2, a distribution of MyST MD document engine
+                            - MyST
+                                - Generates AST from inputs
+                                - Versatile description of a document
+                                - Makes transformations easier (plugins), through manipulating AST
+                                - The option to support more output formats
                         </aside>
                     </section>
                 </section>
