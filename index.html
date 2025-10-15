@@ -74,31 +74,113 @@
                 <!-- LISTENING: Introduction to Jupyter Book -->
                 <section>
                     <h2>Jupyter Book</h2>
-                    <aside data-markdown class="notes">
-                        - Jupyter Book is a system for creating reproducible, reusable and interactive documents
-                        - Source is written in MyST Markdown (an extension of common mark) or Jupyter Notebook
-                        - Typography features
-                            - Lists
-                            - Tables
-                            - Figures
-                            - Maths
-                            - Tabs, dropdowns
-                            - More …
-                        - Interactive content
+                    <section>
+                        <img class="r-stretch" alt="The Jupyter Book logo, formed of text reading jupyter book where the word book is surrounded by braces." src="static/jb_logo.svg">
+                        <blockquote> Create documents and knowledge bases that are reusable, reproducible, and interactive.</blockquote>
+                        <ul class="fragment custom blur">
+                            <li>Features for beautiful typesetting, in many domains</li>
+                            <li>Builds from MyST Markdown or Jupyter Notebooks</li>
+                        </ul>
+                        <aside data-markdown class="notes">
+                            - Jupyter Book is a system for creating reproducible, reusable and interactive documents
+                            - Many features
+                                - Typography
+                                - Structure
+                                    - Lists
+                                    - Tables
+                                    - Tabs, dropdowns
+                                - Technical
+                                    - Maths
+                                    - Code
+                                    - Diagrams
+                                - Media
+                                    - Figures
+                                    - Videos
+                                - More …
+                            - Source is written in MyST Markdown (an extension of common mark) or Jupyter Notebook
+                        </aside>
+                    </section>
+                    <section>
+                        <div class="columns">
+                            <div class="column" style="width: 50%">
+                                <h4>Executable content</h4>
+                                <ul>
+                                    <li class="fragment highlight-current-green" data-fragment-index="1"><b>Jupyter Notebooks</b></li>
+                                    <li class="fragment highlight-current-green" data-fragment-index="2"><code>code-cell</code> blocks in <b>Markdown</b></li>
+                                    <li class="fragment highlight-current-green" data-fragment-index="3"><b>Inline statements</b> using <code>eval</code> in Markdown</li>
+                                </ul>
+                            </div>
+                            <div class="column" style="width: 50%">
+                                <div class="r-stack">
+                                    <img class="fragment current-visible" data-fragment-index="1" alt="Screenshot of a Jupyter Notebook session where one cell defines a function for the Fibonacci series" src="static/notebook.png">
+                                    <pre class="fragment current-visible" data-fragment-index="2"><code data-trim class="language-markdown">
+                                        # Title
+
+                                        ```{code-cell} python
+                                        hello = "hello"
+                                        there = "there"
+                                        phrase = f"{hello}, {there}!"
+                                        print(phrase)
+                                        ```
+                                    </code></pre>
+                                    <pre class="fragment current-visible" data-fragment-index="3"><code data-trim class="language-markdown">
+                                    # Title
+
+                                    1 + 1 is {eval}`1 + 1`
+                                    </code></pre>
+                                    <div class="fragment">
+                                        <h4>Executing</h4>
+                                        <ul>
+                                            <li>At <b>build</b> time</li>
+                                            <li><b>Live</b> in a browser</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <aside data-markdown class="notes">
                             - Executable content in
                                 - Cells in a Jupyter Notebook (`.ipynb`)
                                 - `code-cell` blocks in Markdown files
                                 - Inline code using the `eval` role
                             - Can execute at build time with a local Jupyter server and kernel
                             - Can execute on the page by connecting to a Jupyter server and kernel (_e.g._ MyBinder)
-                        - Powerful and flexible plugin system
-                        - Reusable: content can be referenced or embedded from other Jupyter Books
-                        - Exports to HTML, PDF (LaTeX and Typst), word, JATS
-                            - Through intermediate AST
-                        - History:
-                            - Jupyter Book 1, based on Sphinx documentation engine, supported MyST Markdown input through myst-parser
-                            - Jupyter Book 2, a distribution of MyST MD document engine
-                    </aside>
+                        </aside>
+                    </section>
+                    <section>
+                        <h3>More features!</h3>
+                        <ul>
+                            <li>Plugins</li>
+                            <li>Cross-book references and embedding</li>
+                            <li>Multiple export formats (HTML, pdf, docx, JATS)</li>
+                        </ul>
+                        <aside data-markdown class="notes">
+                            - Powerful and flexible plugin system
+                            - Reusable: content can be referenced or embedded from other Jupyter Books
+                            - Exports to HTML, PDF (LaTeX and Typst), word, JATS
+                                - Through intermediate AST
+                        </aside>
+                    </section>
+                    <section>
+                        <div class="columns">
+                            <div class="column" style="width: 50%">
+                                <h4>Jupyter Book 1</h4>
+                                MyST Parser</br>
+                                Sphinx</br>
+                                <i class="fa-brands fa-python"></i>
+                            </div>
+                            <div class="column" style="width: 50%">
+                                <h4>Jupyter Book 2</h4>
+                                mystmd</br>
+                                <i class="fa-brands fa-node"></i>
+                            </div>
+                        </div>
+                        <aside data-markdown class="notes">
+                            - History:
+                                - Jupyter Book 1, based on Sphinx documentation engine, supported MyST Markdown input through myst-parser
+                                - Jupyter Book 2, a distribution of MyST MD document engine
+                        </aside>
+                    </section>
                 </section>
                 <!-- LISTENING: Introduction to The Turing Way -->
                 <section>
