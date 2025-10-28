@@ -46,6 +46,9 @@
             .fragment.blur.visible {
                 filter: none;
             }
+            strong {
+                color: #17ff2e;
+            }
         </style>
     </head>
     <body>
@@ -59,7 +62,7 @@
                 <!-- Early prompt to install, can be done during introduction slides -->
                 <section>
                     <h2>Installing Jupyter Book</h2>
-                    <p><a href="https://next.jupyterbook.org/start/install/">next.jupyterbook.org/start/install</a></p>
+                    <p><a target="_blank" href="https://next.jupyterbook.org/start/install/">next.jupyterbook.org/start/install</a></p>
                     <img class="r-stretch" alt="A QR code linking to the Jupyter Book 2 installation dcumentation." src="static/jb2_install.svg">
                     </br>
                     <i class="fa-brands fa-python fa-bounce" style="--fa-animation-iteration-count: 1"></i>
@@ -73,8 +76,8 @@
                 </section>
                 <!-- LISTENING: Introduction to Jupyter Book -->
                 <section>
-                    <h2>Jupyter Book</h2>
-                    <section>
+                    <section data-auto-animate>
+                        <h2>Jupyter Book</h2>
                         <img class="r-stretch" alt="The Jupyter Book logo, formed of text reading jupyter book where the word book is surrounded by braces." src="static/jb_logo.svg">
                         <blockquote> Create documents and knowledge bases that are reusable, reproducible, and interactive.</blockquote>
                         <ul class="fragment custom blur">
@@ -100,14 +103,15 @@
                             - Source is written in MyST Markdown (an extension of common mark) or Jupyter Notebook
                         </aside>
                     </section>
-                    <section>
+                    <section data-auto-animate>
+                        <h2>Jupyter Book</h2>
                         <div class="columns">
                             <div class="column" style="width: 50%">
                                 <h4>Executable content</h4>
                                 <ul>
-                                    <li class="fragment highlight-current-green" data-fragment-index="1"><b>Jupyter Notebooks</b></li>
-                                    <li class="fragment highlight-current-green" data-fragment-index="2"><code>code-cell</code> blocks in <b>Markdown</b></li>
-                                    <li class="fragment highlight-current-green" data-fragment-index="3"><b>Inline statements</b> using <code>eval</code> in Markdown</li>
+                                    <li class="fragment highlight-current-green" data-fragment-index="1">Jupyter Notebooks</li>
+                                    <li class="fragment highlight-current-green" data-fragment-index="2"><code>code-cell</code> blocks in Markdown</li>
+                                    <li class="fragment highlight-current-green" data-fragment-index="3">Inline statements using <code>eval</code> in Markdown</li>
                                 </ul>
                             </div>
                             <div class="column" style="width: 50%">
@@ -151,7 +155,8 @@
                                 - Presenting research in a reproducible format
                         </aside>
                     </section>
-                    <section>
+                    <section data-auto-animate>
+                        <h2>Jupyter Book</h2>
                         <h3>More features!</h3>
                         <ul>
                             <li>Plugins</li>
@@ -170,7 +175,8 @@
                                 - Suitable for websites, portable/printable documents, journals
                         </aside>
                     </section>
-                    <section>
+                    <section data-auto-animate>
+                        <h2>Jupyter Book</h2>
                         <div class="columns">
                             <div class="column" style="width: 50%">
                                 <h4>Jupyter Book 1</h4>
@@ -202,14 +208,14 @@
                 </section>
                 <!-- DOING: Install -->
                 <section>
-                    <section>
+                    <section data-auto-animate>
                         <h2>Activity <i class="fa-solid fa-gear fa-spin" style="--fa-animation-duration: 5s;"></i></h2>
                         <h2>The template</h2>
                     </section>
-                    <section>
+                    <section data-auto-animate>
                         <h2>Activity <i class="fa-solid fa-gear fa-spin" style="--fa-animation-duration: 5s;"></i></h2>
                         <h2>Installation</h2>
-                        <p><a href="https://next.jupyterbook.org/start/install/">next.jupyterbook.org/start/install</a></p>
+                        <p><a target="_blank" href="https://next.jupyterbook.org/start/install/">next.jupyterbook.org/start/install</a></p>
                         <img class="r-stretch" alt="A QR code linking to the Jupyter Book 2 installation dcumentation." src="static/jb2_install.svg">
                         </br>
                         <i class="fa-brands fa-python fa-bounce" style="--fa-animation-iteration-count: 1"></i>
@@ -225,11 +231,12 @@
                 </section>
                 <!-- LISTENING: Showcase -->
                 <section>
-                    <h2>Jupyter Book Showcase</h2>
-                    <section>
+                    <section data-auto-animate>
+                        <h2>Jupyter Book Showcase</h2>
                         <h3>Highlight 1</h3>
                     </section>
-                    <section>
+                    <section data-auto-animate>
+                        <h2>Jupyter Book Showcase</h2>
                         <h3>Highlight 2</h3>
                     </section>
                 </section>
@@ -267,21 +274,75 @@
                 </section>
                 <!-- LISTENING: Wrap up and call to action -->
                 <section>
-                    <section>
-                        <h2>Reflections</h2>
-                        <!-- Highlight participants outputs -->
-                    </section>
-                    <section>
-                        <h2>Contributing to Jupyter Books</h2>
-                    </section>
-                    <section>
+                    <h2>Reflections</h2>
+                    <!-- Highlight participants outputs -->
+                </section>
+                <section>
+                    <h2>Contributing to Jupyter Books</h2>
+                </section>
+                <section>
+                    <section data-auto-animate>
                         <h2>The Turing Way Community</h2>
                         <img class="r-stretch" alt="A group of people work together on a stage labelled our community. Some are tending to plants with symbols representing data and version control. A new community member is being welcomed to the team. Text emphasises working together, sharing knowledge and helping eachother." src="static/community.svg">
+                        <blockquote>Community-written handbook for reproducible, ethical and collaborative data science.</blockquote>
+                        <aside data-markdown class="notes">
+                            - Community-written handbook for reproducible, ethical and collaborative data science
+                            - Build on JupyterBook 2
+                            - Open and welcoming community
+                        </aside>
+                    </section>
+                    <section data-auto-animate>
+                        <h2>The Turing Way Community</h2>
+                        <h3>Empowering contributors</h3>
+                        <ul>
+                            <li><strong>Mentor</strong> contributors at all levels</li>
+                            <li>Governance emphasises <strong>community power</strong></li>
+                            <li><strong>Open</strong> working groups</li>
+                            <li>Open governance and decision making</li>
+                        </ul>
+                        <aside data-markdown class="notes">
+                            - Committed to empowering the community
+                            - Governance is designed to push decision making power to the community
+                                - Some power is held by working groups with open membership
+                        </aside>
+                    </section>
+                    <section data-auto-animate>
+                        <h2>The Turing Way Community</h2>
+                        <h3>Get involved</h3>
+                        <ul>
+                            <li><strong>Edit</strong> and <strong>improve</strong> pages</li>
+                            <li><strong>Gardening</strong> and maintenance</li>
+                            <li>Working groups</li>
+                            <li><strong>Community</strong> management</li>
+                            <li>Event <strong>coordination</strong></li>
+                            <li><strong>Mentoring</strong> contributors</li>
+                            <li><strong>Funding</strong> and sustainability</li>
+                        </ul>
+                        <aside data-markdown class="notes">
+                            - Many opportunities to be involved in all parts of the community
+                            - In writing, technical, community management, funding, governance …
+                        </aside>
+                    </section>
+                    <section data-auto-animate>
+                        <h2>The Turing Way Community</h2>
+                        <h3>Events and onboarding</h3>
+                        <ul>
+                            <li>Collaboration Cafés ☕️</li>
+                            <li>Onboarding calls ☎️</li>
+                            <li>Book Dash 📘💨</li>
+                            <li>Community Forum 📣</li>
+                        </ul>
+                        <aside data-markdown class="notes">
+                            - Regular events to
+                                - onboard new contributors
+                                - work together
+                                - share our achievements
+                        </aside>
                     </section>
                 </section>
                 <section>
                     <h2>More Jupyter Book 2 at JupyterCon</h2>
-                    <a href="https://jupytercon2025.sched.com/event/28H3D/introducing-jupyter-book-2-next-generation-tools-for-creating-computational-narratives-chris-holdgraf-2i2c-rowan-cockett-curvenote">Introducing Jupyter Book 2: Next-generation Tools for Creating Computational Narratives</a>
+                    <a target="_blank" href="https://jupytercon2025.sched.com/event/28H3D/introducing-jupyter-book-2-next-generation-tools-for-creating-computational-narratives-chris-holdgraf-2i2c-rowan-cockett-curvenote">Introducing Jupyter Book 2: Next-generation Tools for Creating Computational Narratives</a>
                     </br>
                     Tuesday 11:00
                     </br>
