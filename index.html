@@ -8,34 +8,34 @@
     />
 
     <title>Build a Jupyter Book with The Turing Way</title>
-
-    <link rel="stylesheet" href="reveal.js/dist/reset.css" />
-    <link rel="stylesheet" href="reveal.js/dist/reveal.css" />
-    <link rel="stylesheet" href="reveal.js/dist/theme/black.css" />
-
-    <!-- Theme used for syntax highlighted code -->
-    <link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css" />
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="assets/fontawesome/css/all.css" />
-
-    <!-- Custom styling -->
+    <!-- Base styling -->
     <style>
-      /* Capitalise headings */
-      .reveal h1,
-      .reveal h2,
-      .reveal h3,
-      .reveal h4 {
-        text-transform: capitalize;
+      @layer base, fonts, highlight, reveal, theme;
+      @import "./reveal.js/dist/reset.css" layer(base);
+      @import "./reveal.js/dist/reveal.css" layer(reveal);
+      @import "./reveal.js/dist/theme/black.css" layer(theme);
+      @import "./reveal.js/plugin/highlight/monokai.css" layer(highlight);
+      @import "./assets/fontawesome/css/all.css" layer(fonts);
+    </style>
+    <!-- User styles -->
+    <style>
+      .reveal {
+        /* Capitalise headings */
+        h1,
+        h2,
+        h3,
+        h4 {
+          text-transform: capitalize;
+        }
+        /* Align text in tables */
+        table td,
+        table th {
+          text-align: center;
+        }
       }
       /* Set caption text size */
       figcaption {
         font-size: medium;
-      }
-      /* Align text in tables */
-      .reveal table td,
-      .reveal table th {
-        text-align: center;
       }
       /* Columns div definition */
       div.columns {
@@ -46,15 +46,75 @@
         flex: auto;
         overflow-x: auto;
       }
-      /* Blur fragment */
-      .fragment.blur {
-        filter: blur(8px);
-      }
-      .fragment.blur.visible {
-        filter: none;
+      .fragment {
+        /* Blur fragment */
+        &.blur {
+          filter: blur(8px);
+        }
+        &.blur.visible {
+          filter: none;
+        }
+        /* Visible fragment */
+        &.disappear {
+          display: unset;
+        }
+        &.disappear.visible:not(.current-fragment) {
+          display: none;
+        }
+        /* Invisible fragment */
+        &.appear {
+          display: none;
+        }
+        &.appear.visible {
+          display: unset;
+        }
       }
       strong {
         color: #17ff2e;
+      }
+
+      :root {
+        --jupyter-orange: #f37626;
+      }
+
+      .jupyter-orange {
+        color: var(--jupyter-orange);
+      }
+
+      .tiny {
+        font-size: 0.25em;
+      }
+      section.present > .typewriter {
+        overflow: hidden; /* Ensures the content is not revealed until the animation */
+        border-right: 0.15em solid orange; /* The typwriter cursor */
+        white-space: nowrap; /* Keeps the content on a single line */
+        margin: auto auto !important; /* Gives that scrolling effect as the typing happens */
+        text-align: center;
+        letter-spacing: 0.15em; /* Adjust as needed */
+        animation:
+          typing 3.5s steps(40, end),
+          blink-caret 0.75s step-end infinite;
+      }
+
+      /* The typing effect */
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      /* The typewriter cursor effect */
+      @keyframes blink-caret {
+        from,
+        to {
+          border-color: transparent;
+        }
+        50% {
+          border-color: orange;
+        }
       }
     </style>
   </head>
@@ -379,7 +439,377 @@
         </section>
         <!-- LISTENING: Advanced features and hacking on MyST -->
         <section>
-          <h2>Advanced MyST</h2>
+          <section>
+            <h2>Advanced MyST</h2>
+            <p>
+              The most exciting thing about Jupyter Book is
+              <em class="fragment custom blur">not the dialect of Markdown</em>!
+            </p>
+            <p class="fragment">
+              Jupyter Book is a tool for structured communication.
+            </p>
+          </section>
+          <section>
+            <h3>
+              <em class="jupyter-orange">Example:</em> I want to find the
+              glossary terms in TTW
+            </h3>
+            <p class="fragment">
+              Take the glossary URL<br />
+              <a href="https://book.the-turing-way.org/afterword/glossary/"
+                >book.the-turing-way.org/afterword/glossary/</a
+              >
+            </p>
+            <p class="fragment">
+              and tweak it to point to the <em>structured data</em><br />
+              <a href="https://book.the-turing-way.org/afterword.glossary.json"
+                >book.the-turing-way.org/afterword.glossary.json</a
+              >
+            </p>
+          </section>
+          <section>
+            <p>The data is JSON!</p>
+            <pre><code data-trim class="language-shell">
+             $ curl https://book.the-turing-way.org/afterword.glossary.json</code></pre>
+            <pre><code data-trim class="language-json">
+                {
+                  "version": 2,
+                  "kind": "Article",
+                  "sha256": "4347650f55c9dd2731a58abd686252ceee472e608780998c6bd3f2ec25e6c3de",
+                  "slug": "afterword.glossary",
+                  "location": "/afterword/glossary.md",
+                  "dependencies": [],
+                  "frontmatter": {
+                  ...
+
+                     </code></pre>
+          </section>
+          <section>
+            <p>What does a "node" look like?</p>
+            <pre><code data-trim class="language-markdown">
+:::{glossary}
+Shambles
+
+: A disorganised mess or chaotic environment.
+
+The Bees Knees
+
+: To be excellent or of an extremely high standard.
+:::
+                     </code></pre>
+            <pre class="fragment"><code data-trim class="language-json">
+        {
+          "type": "glossary",
+          "children": [
+            {
+              "type": "definitionList",
+              "children": [
+                {
+                  "type": "definitionTerm",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Shambles"
+                    }
+                  ],
+                  "label": "Shambles",
+                  "identifier": "term-shambles",
+                  "html_id": "term-shambles",
+                  "indexEntries": [
+                    {
+                      "entry": "Shambles"
+                    }
+                  ]
+                },
+                {
+                  "type": "definitionDescription",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "A disorganised mess or chaotic environment."
+                    }
+                  ]
+                },
+                {
+                  "type": "definitionTerm",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "The Bees Knees"
+                    }
+                  ],
+                  "label": "The Bees Knees",
+                  "identifier": "term-the bees knees",
+                  "html_id": "term-the-bees-knees",
+                  "indexEntries": [
+                    {
+                      "entry": "The Bees Knees"
+                    }
+                  ]
+                },
+                {
+                  "type": "definitionDescription",
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "To be excellent or of an extremely high standard."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+                           </code></pre>
+          </section>
+          <section>
+            <p>Pull out the TTW glossary terms</p>
+            <pre><code data-trim class="language-shell">
+                        $ curl https://book.the-turing-way.org/afterword.glossary.json \
+                          | jq -r ' 
+                              # Pull out our AST
+                              .mdast |
+                              # Recursively walk through AST
+                              .. | 
+                              # Pull out definitionTerm nodes
+                              select(.type? == "definitionTerm") |
+                              # Pull out text nodes from their children
+                              .children[] | select(.type == "text") |
+                              # Dump the text value!
+                              .value' 
+                     </code></pre>
+            <pre class="fragment"><code data-trim class="language-shell">
+Acceptance Testing
+Acknowledgements
+Add
+Adversarial Learning
+Artificial intelligence (AI)
+Authors
+Binder
+Binderhub
+Binderize
+Branch
+Bug
+Build
+Checkout
+Citizen Science
+Clone
+Code Coverage
+Code of Conduct
+Code Review
+Coercive authorship
+Commit
+Commit Message
+Communication Channel
+Community Member
+Computational Environment
+Conda
+Consortia authorship
+Container
+Continuous Delivery
+Continuous Deployment
+Continuous Integration
+Contributing Guidelines
+Contributors
+Corresponding author
+Creative Commons
+CRediT Taxonomy
+Data repository
+Differential privacy
+DMP
+DNS
+Docker Container
+Docker Compose
+Dockerfile
+Docker Image
+Docker Registry
+Digital Object Identifier
+End to End Test
+Epistemology
+Equitable, Diverse and Inclusive Practices
+Ethical Source Software
+FAIR
+Fair Code
+Federated Learning
+First author
+Free or Libre Software
+Free Cultural Works
+Generalisable
+Git
+Github
+GitLab
+Ghost author
+Gift author
+Group authorship
+Guarantor
+Hazard
+Head
+Helm
+Honorary authorship
+Hosting
+Human Readable
+Identifier
+Image
+Inner source
+Integration Testing
+Intersectionality
+Issues
+Issue Tracking
+Job
+JupyterHub
+Kubernetes
+License
+Last author
+Machine Learning (ML)
+Machine Readable
+Main
+Maintainers
+Makefile
+Merge
+Merge Conflict
+Metadata
+Mock Test
+Open access
+Open access publishing (gratis)
+Open access publishing (libre)
+Open core
+Open data
+Open educational resources
+Open license
+Open notebooks
+Open project
+Open scholarship
+Open source
+Open source hardware
+Open source software
+ORCID
+Owner
+Package Management System
+Persistent Identifier
+Pattern
+Peer Review
+Persona
+Persona Canvas
+Phony Target
+Plain Language
+Positionality
+Power Users
+Preprint
+Prerequisite
+Project Design
+Pull Request
+Push
+RDM
+README
+Recipe
+Regression Test
+Replicable
+repo2docker
+Repository
+Reproducible
+Rendered Output
+Research Compendia
+Research Data Management
+Research Ethics
+Research Objects
+Review
+Risk
+Risk Assessment
+Risk Matrix
+Roadmapping
+Robust
+Rule
+Runtime Test
+Self Archiving
+Self Reflection
+SHA
+Shared authorship
+Smoke Testing
+Source Available
+Staged
+Stale
+Stochastic Code
+Syntax
+System Testing
+Target
+Test Driven Development
+Test Stub
+Test Suite
+Testing Framework
+Travis
+Unit
+Unit Testing
+Virtual Machine
+YAML
+                     </code></pre>
+          </section>
+          <section>
+            <h3>Manipulating the AST with a <em>plugin</em></h3>
+            <p class="fragment">
+              <span class="jupyter-orange">POV:</span> You've written an
+              assignment with the help of a close friend
+              <sup class="tiny">LLM</sup>.
+            </p>
+            <p class="fragment">
+              They use too many em-dashes (—). How can we automate the process
+              of cleaning up the text?
+            </p>
+          </section>
+          <section>
+            <p>
+              Jupyter Book supports <em>plugins</em>. These are small units of
+              code that can manipulate the AST to do interesting things to your
+              documents.
+            </p>
+            <p class="fragment">
+              Let's write a plugin that replaces em-dashes with two hyphens!
+            </p>
+          </section>
+          <section>
+            <p class="typewriter tiny">
+              Got it -- I'll help you to write your PhD thesis on nuclear
+              structure in the style of a sleep-deprived badger.
+            </p>
+            <p class="fragment">
+              Nuclear structure is — yawn — a highly complex field. Badgers
+              don't understand nuclear physics.
+            </p>
+            <img
+              src="https://www.weizmann.ac.il/complex/poddubny/sites/complex.poddubny/files/2025-02/cover6_2.jpg"
+              alt="A badger swimming with various physics phenomena overlayed"
+            />
+          </section>
+          <section>
+            <pre><code data-trim class="language-javascript">
+                export default {
+                  name: "My plugin",
+                  transforms: [
+                    {
+                      name: "remove-ai",
+                      doc: "A transform to hide the involvement of LLMs, we promise.",
+                      stage: "document",
+                      plugin: (_, utils) => (root) => {
+                        const nodes = utils.selectAll("text", root);
+                        for (const node of nodes) {
+                          node.value = node.value.replace("—", "--");
+                        }
+                      },
+                    },
+                  ],
+                };
+            </code></pre>
+          </section>
+          <section>
+            <p class="fragment">
+              Nuclear structure is
+              <span class="jupyter-orange">-- yawn --</span> a highly complex
+              field. Badgers don't understand nuclear physics.
+            </p>
+            <img
+              src="https://www.weizmann.ac.il/complex/poddubny/sites/complex.poddubny/files/2025-02/cover6_2.jpg"
+              alt="A badger swimming with various physics phenomena overlayed"
+            />
+          </section>
         </section>
         <!-- LISTENING: Wrap up and call to action -->
         <section>
