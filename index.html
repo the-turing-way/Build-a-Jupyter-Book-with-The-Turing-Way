@@ -38,13 +38,15 @@
         font-size: medium;
       }
       /* Columns div definition */
-      div.columns {
-        display: flex;
-        gap: min(4vw, 1.5em);
-      }
-      div.column {
-        flex: auto;
-        overflow-x: auto;
+      div {
+        &.columns {
+          display: flex;
+          gap: min(4vw, 1.5em);
+        }
+        &.column {
+          flex: auto;
+          overflow-x: auto;
+        }
       }
       .fragment.blur {
         /* Blur fragment */
@@ -727,10 +729,7 @@ YAML
           </section>
           <section>
             <p>Jupyter Book supports <em class="jp-orange">plugins</em>.</p>
-            <p>
-              These are small units of code that can manipulate the AST to do
-              interesting things to your documents.
-            </p>
+            <p>These are small units of code that can manipulate the AST.</p>
             <p class="fragment">
               Let's write a plugin that replaces em-dashes with two hyphens!
             </p>
@@ -770,7 +769,7 @@ YAML
             </code></pre>
           </section>
           <section>
-            <p class="fragment">
+            <p>
               Nuclear structure is
               <span class="jp-orange">-- yawn --</span> a highly complex field.
               Badgers don't understand nuclear physics.
@@ -779,6 +778,57 @@ YAML
               src="https://www.weizmann.ac.il/complex/poddubny/sites/complex.poddubny/files/2025-02/cover6_2.jpg"
               alt="A badger swimming with various physics phenomena overlayed"
             />
+          </section>
+          <section data-auto-animate>
+            <h3>Plugins can make your life easier</h3>
+            <pre
+              data-preview-link="https://mystmd.org/sandbox?tab=demo&myst=OgA6ADoAewBsAGkAcwB0AC0AdABhAGIAbABlAH0ACgAtACAALQAgAEIAdQBpAGwAZAAgAGAALwBwAHUAbABsAGAAIABlAG4AZABwAG8AaQBuAHQACgAgACAALQAgADEANQBoAAoAIAAgAC0AIAAyADYAaAAKAC0AIAAtACAAVwByAGkAdABlACAAdABlAHMAdABzACAAZgBvAHIAIAByAGUAcABvAHAAcgBvAHYAaQBkAGUAcgAgAGUAbgBkAHAAbwBpAG4AdAAKACAAIAAtACAANQBoAAoAIAAgAC0AIAA5AGgACgAtACAALQAgAE8AcABlAG4AIABwAHUAbABsAC0AcgBlAHEAdQBlAHMAdAAgAGEAbgBkACAAcwBoAGUAcABoAGUAcgBkACAAdABoAHIAbwB1AGcAaAAgAHQAbwAgAG0AZQByAGcAZQAKACAAIAAtACAANABoAAoAIAAgAC0AIAA4AGgACgAtACAALQAgAEEAZABkAGkAdABpAG8AbgBhAGwAIABsAGUAYQByAG4AaQBuAGcAIABhAG4AZAAgAHIAZQBmAGkAbgBlAG0AZQBuAHQACgAgACAALQAgADIAaAAKACAAIAAtACAANgBoAAoAOgA6ADoA"
+            ><code data-trim class="language-markdown">
+                :::{list-table}
+                - - Build `/pull` endpoint
+                  - 15h
+                  - 26h
+                - - Write tests for repoprovider endpoint
+                  - 5h
+                  - 9h
+                - - Open pull-request and shepherd through to merge
+                  - 4h
+                  - 8h
+                - - Additional learning and refinement
+                  - 2h
+                  - 6h
+                :::
+              </code></pre>
+          </section>
+          <section data-auto-animate>
+            <h3>Plugins can make your life easier</h3>
+            <pre
+              class="code-wrapper"
+              data-preview-image="static/table-plugin.png"
+            >
+            <code data-trim data-noescape class="language-markdown hljs" data-highlighted="yes">:::{<span class="jp-orange">estimate-table</span>}
+- - Build `/pull` endpoint
+  - 15h
+  - 26h
+- - Write tests for repoprovider endpoint
+  - 5h
+  - 9h
+- - Open pull-request and shepherd through to merge
+  - 4h
+  - 8h
+- - Additional learning and refinement
+  - 2h
+  - 6h
+:::</code>
+            </pre>
+            <!-- prettier-ignore -->
+            <aside data-markdown class="notes">
+              - I am allergic to error-prone work. 
+              - I don't trust myself to add three numbers together.
+              - More generally, copy-and-pasting errors and out-of-sync text are the bane of human existence.
+              - Simply by using a different directive name (one we've built), this table is different.
+              - It computes the estimates and adds a total.
+            </aside>
           </section>
         </section>
         <!-- LISTENING: Wrap up and call to action -->
