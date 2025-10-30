@@ -46,27 +46,12 @@
         flex: auto;
         overflow-x: auto;
       }
-      .fragment {
+      .fragment.blur {
         /* Blur fragment */
-        &.blur {
-          filter: blur(8px);
-        }
-        &.blur.visible {
+        filter: blur(8px);
+
+        &.visible {
           filter: none;
-        }
-        /* Visible fragment */
-        &.disappear {
-          display: unset;
-        }
-        &.disappear.visible:not(.current-fragment) {
-          display: none;
-        }
-        /* Invisible fragment */
-        &.appear {
-          display: none;
-        }
-        &.appear.visible {
-          display: unset;
         }
       }
       strong {
