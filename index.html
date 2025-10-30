@@ -458,7 +458,7 @@
               Jupyter Book is a tool for structured communication.
             </p>
           </section>
-          <section>
+          <section data-auto-animate>
             <h3>
               <em class="jupyter-orange">Example:</em> I want to find the
               glossary terms in TTW
@@ -476,7 +476,11 @@
               >
             </p>
           </section>
-          <section>
+          <section data-auto-animate>
+            <h3>
+              <em class="jupyter-orange">Example:</em> I want to find the
+              glossary terms in TTW
+            </h3>
             <p>The data is JSON!</p>
             <pre><code data-trim class="language-shell">
              $ curl https://book.the-turing-way.org/afterword.glossary.json</code></pre>
@@ -493,88 +497,41 @@
 
                      </code></pre>
           </section>
-          <section>
+          <section data-auto-animate>
+            <h3>
+              <em class="jupyter-orange">Example:</em> I want to find the
+              glossary terms in TTW
+            </h3>
             <p>What does a "node" look like?</p>
-            <pre><code data-trim class="language-markdown">
-:::{glossary}
-Shambles
-
-: A disorganised mess or chaotic environment.
-
-The Bees Knees
-
-: To be excellent or of an extremely high standard.
-:::
-                     </code></pre>
-            <pre class="fragment"><code data-trim class="language-json">
-        {
-          "type": "glossary",
-          "children": [
-            {
-              "type": "definitionList",
-              "children": [
-                {
-                  "type": "definitionTerm",
-                  "children": [
-                    {
-                      "type": "text",
-                      "value": "Shambles"
-                    }
-                  ],
-                  "label": "Shambles",
-                  "identifier": "term-shambles",
-                  "html_id": "term-shambles",
-                  "indexEntries": [
-                    {
-                      "entry": "Shambles"
-                    }
-                  ]
-                },
-                {
-                  "type": "definitionDescription",
-                  "children": [
-                    {
-                      "type": "text",
-                      "value": "A disorganised mess or chaotic environment."
-                    }
-                  ]
-                },
-                {
-                  "type": "definitionTerm",
-                  "children": [
-                    {
-                      "type": "text",
-                      "value": "The Bees Knees"
-                    }
-                  ],
-                  "label": "The Bees Knees",
-                  "identifier": "term-the bees knees",
-                  "html_id": "term-the-bees-knees",
-                  "indexEntries": [
-                    {
-                      "entry": "The Bees Knees"
-                    }
-                  ]
-                },
-                {
-                  "type": "definitionDescription",
-                  "children": [
-                    {
-                      "type": "text",
-                      "value": "To be excellent or of an extremely high standard."
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-                           </code></pre>
+            <a
+              href="https://mystmd.org/sandbox?tab=demo&myst=OgA6ADoAewBnAGwAbwBzAHMAYQByAHkAfQAKAFMAaABhAG0AYgBsAGUAcwAKAAoAOgAgAEEAIABkAGkAcwBvAHIAZwBhAG4AaQBzAGUAZAAgAG0AZQBzAHMAIAAKAG8AcgAgAGMAaABhAG8AdABpAGMAIABlAG4AdgBpAHIAbwBuAG0AZQBuAHQALgAKAAoAVABoAGUAIABCAGUAZQBzACAASwBuAGUAZQBzAAoACgA6ACAAVABvACAAYgBlACAAZQB4AGMAZQBsAGwAZQBuAHQAIABvAHIAIABvAGYAIAAKAGEAbgAgAGUAeAB0AHIAZQBtAGUAbAB5ACAAaABpAGcAaAAgAHMAdABhAG4AZABhAHIAZAAuAAoAOgA6ADoA"
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.5em;
+              "
+              data-preview-link
+              ><img
+                src="https://raw.githubusercontent.com/jupyter-book/mystmd/refs/heads/main/docs/public/favicon.svg"
+                style="height: 2em"
+              />
+              View in the MyST Sandbox
+            </a>
           </section>
-          <section>
+          <section data-auto-animate>
+            <h3>
+              <em class="jupyter-orange">Example:</em> I want to find the
+              glossary terms in TTW
+            </h3>
             <p>Pull out the TTW glossary terms</p>
-            <pre><code data-trim class="language-shell">
-                        $ curl https://book.the-turing-way.org/afterword.glossary.json \
+            <div class="columns" style="gap: 0.25em">
+              <pre
+                class="column"
+                style="width: 60%"
+              ><code data-trim class="language-shell">
+                        $ curl https://book.the-turing-way.org/\
+                               afterword.glossary.json \
                           | jq -r ' 
                               # Pull out our AST
                               .mdast |
@@ -587,7 +544,10 @@ The Bees Knees
                               # Dump the text value!
                               .value' 
                      </code></pre>
-            <pre class="fragment"><code data-trim class="language-shell">
+              <pre
+                class="column"
+                style="width: 40%"
+              ><code data-trim class="language-shell">
 Acceptance Testing
 Acknowledgements
 Add
@@ -750,7 +710,8 @@ Unit
 Unit Testing
 Virtual Machine
 YAML
-                     </code></pre>
+            </code></pre>
+            </div>
           </section>
           <section>
             <h3>Manipulating the AST with a <em>plugin</em></h3>
