@@ -59,16 +59,13 @@
       }
 
       :root {
-        --jupyter-orange: #f37626;
+        --jp-orange: #f37626;
       }
 
-      .jupyter-orange {
-        color: var(--jupyter-orange);
+      .jp-orange {
+        color: var(--jp-orange);
       }
 
-      .tiny {
-        font-size: 0.25em;
-      }
       section.present > .typewriter {
         overflow: hidden; /* Ensures the content is not revealed until the animation */
         border-right: 0.15em solid orange; /* The typwriter cursor */
@@ -460,8 +457,8 @@
           </section>
           <section data-auto-animate>
             <h3>
-              <em class="jupyter-orange">Example:</em> I want to find the
-              glossary terms in TTW
+              <em class="jp-orange">Example:</em> I want to find the glossary
+              terms in TTW
             </h3>
             <p class="fragment">
               Take the glossary URL<br />
@@ -478,8 +475,8 @@
           </section>
           <section data-auto-animate>
             <h3>
-              <em class="jupyter-orange">Example:</em> I want to find the
-              glossary terms in TTW
+              <em class="jp-orange">Example:</em> I want to find the glossary
+              terms in TTW
             </h3>
             <p>The data is JSON!</p>
             <pre><code data-trim class="language-shell">
@@ -499,8 +496,8 @@
           </section>
           <section data-auto-animate>
             <h3>
-              <em class="jupyter-orange">Example:</em> I want to find the
-              glossary terms in TTW
+              <em class="jp-orange">Example:</em> I want to find the glossary
+              terms in TTW
             </h3>
             <p>What does a "node" look like?</p>
             <a
@@ -521,8 +518,8 @@
           </section>
           <section data-auto-animate>
             <h3>
-              <em class="jupyter-orange">Example:</em> I want to find the
-              glossary terms in TTW
+              <em class="jp-orange">Example:</em> I want to find the glossary
+              terms in TTW
             </h3>
             <p>Pull out the TTW glossary terms</p>
             <div class="columns" style="gap: 0.25em">
@@ -716,27 +713,30 @@ YAML
           <section>
             <h3>Manipulating the AST with a <em>plugin</em></h3>
             <p class="fragment">
-              <span class="jupyter-orange">POV:</span> You've written an
-              assignment with the help of a close friend
-              <sup class="tiny">LLM</sup>.
+              <span class="jp-orange" style="font-size: 2em">POV</span>
+              You've written an assignment with the help of a close friend
+              <sup style="font-size: 0.25em"
+                ><em>LLMs can be our friends, right?</em></sup
+              >
             </p>
             <p class="fragment">
-              They use too many em-dashes (—). How can we automate the process
-              of cleaning up the text?
+              They use too many
+              <span class="jp-orange">em-dashes</span>
+              (—). How can we automate the process of cleaning up the text?
             </p>
           </section>
           <section>
+            <p>Jupyter Book supports <em class="jp-orange">plugins</em>.</p>
             <p>
-              Jupyter Book supports <em>plugins</em>. These are small units of
-              code that can manipulate the AST to do interesting things to your
-              documents.
+              These are small units of code that can manipulate the AST to do
+              interesting things to your documents.
             </p>
             <p class="fragment">
               Let's write a plugin that replaces em-dashes with two hyphens!
             </p>
           </section>
           <section>
-            <p class="typewriter tiny">
+            <p class="typewriter" style="font-size: 0.25em">
               Got it -- I'll help you to write your PhD thesis on nuclear
               structure in the style of a sleep-deprived badger.
             </p>
@@ -772,8 +772,8 @@ YAML
           <section>
             <p class="fragment">
               Nuclear structure is
-              <span class="jupyter-orange">-- yawn --</span> a highly complex
-              field. Badgers don't understand nuclear physics.
+              <span class="jp-orange">-- yawn --</span> a highly complex field.
+              Badgers don't understand nuclear physics.
             </p>
             <img
               src="https://www.weizmann.ac.il/complex/poddubny/sites/complex.poddubny/files/2025-02/cover6_2.jpg"
