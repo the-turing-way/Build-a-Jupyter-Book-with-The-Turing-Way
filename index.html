@@ -135,6 +135,7 @@
                                     <div class="fragment">
                                         <h4>Executing</h4>
                                         <ul>
+                                            <li><b>Before</b> build (for notebooks)</li>
                                             <li>At <b>build</b> time</li>
                                             <li><b>Live</b> in a browser</li>
                                         </ul>
@@ -147,7 +148,8 @@
                                 - Cells in a Jupyter Notebook (`.ipynb`)
                                 - `code-cell` blocks in Markdown files
                                 - Inline code using the `eval` role
-                            - Can execute at build time with a local Jupyter server and kernel
+                            - Can include outputs from a Jupyter notebook run _before_ building
+                            - Can execute notebooks and code cells at build time with a local Jupyter server and kernel
                             - Can execute on the page by connecting to a Jupyter server and kernel (_e.g._ MyBinder)
                             - Uses
                                 - Interactive demos for readers
