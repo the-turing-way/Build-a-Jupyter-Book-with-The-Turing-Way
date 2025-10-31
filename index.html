@@ -56,8 +56,13 @@
           filter: none;
         }
       }
+      .fragment.highlight {
+        &.current-fragment {
+          color: var(--jp-orange);
+        }
+      }
       strong {
-        color: #17ff2e;
+        color: var(--jp-orange);
       }
 
       :root {
@@ -116,15 +121,27 @@
             src="static/bannerwelcome.svg"
           />
         </section>
-        <!-- Early prompt to install, can be done during introduction slides -->
+        <!-- Introduction to presenters -->
         <section>
+          <img src="static/angus.jpg" width="200px" />
+          <img src="static/arielle.jpg" width="200px" />
+          <img src="static/chris.jpg" width="200px" />
+          <img src="static/franklin.jpg" width="200px" />
+          <img src="static/jim.jpg" width="200px" />
+          <img src="static/kirstie.jpg" width="200px" />
+          <img src="static/robert.jpg" width="200px" />
+          <img src="static/rowan.png" width="200px" />
+        </section>
+        <!-- Early prompt to install, can be done during introduction slides -->
+        <section data-visibility="hidden">
           <h2>Installing Jupyter Book</h2>
           <p>
             <a
-              target="_blank"
               href="https://next.jupyterbook.org/start/install/"
-              >next.jupyterbook.org/start/install</a
+              data-preview-link
             >
+              next.jupyterbook.org/start/install
+            </a>
           </p>
           <img
             class="r-stretch"
@@ -190,22 +207,13 @@
               <div class="column" style="width: 50%">
                 <h4>Executable content</h4>
                 <ul>
-                  <li
-                    class="fragment highlight-current-green"
-                    data-fragment-index="1"
-                  >
+                  <li class="fragment custom highlight" data-fragment-index="1">
                     Jupyter Notebooks
                   </li>
-                  <li
-                    class="fragment highlight-current-green"
-                    data-fragment-index="2"
-                  >
+                  <li class="fragment custom highlight" data-fragment-index="2">
                     <code>code-cell</code> blocks in Markdown
                   </li>
-                  <li
-                    class="fragment highlight-current-green"
-                    data-fragment-index="3"
-                  >
+                  <li class="fragment custom highlight" data-fragment-index="3">
                     Inline statements using <code>eval</code> in Markdown
                   </li>
                 </ul>
@@ -313,10 +321,38 @@
                   - The option to support more output formats
             </aside>
           </section>
+          <section data-auto-animate>
+            <h2>Jupyter Book</h2>
+            <iframe
+              src="https://doi.org/10.25080/hwcj9957"
+              width="100%"
+              height="500px"
+              data-preview
+            ></iframe>
+            <a href="https://doi.org/10.25080/hwcj9957" target="_blank"
+              >doi: 10.25080/hwcj9957</a
+            >
+          </section>
+          <!-- prettier-ignore -->
+          <aside data-markdown class="notes">
+              - Paper at SciPy 2025
+              - First production release this week
+              - Talk Tuesday at 11:00 introducing the new major version
+            </aside>
         </section>
         <!-- LISTENING: Introduction to The Turing Way -->
         <section>
           <h2>The Turing Way</h2>
+            <a href="https://book.the-turing-way.org" data-preview-link>
+              <img
+                src="static/pathway.svg"
+                style="height: 11em"
+              />
+            </a>
+            <br />
+            <a href="book.the-turing-way.org" target="_blank"
+              >book.the-turing-way.org</a
+            >
         </section>
         <!-- DOING: Install -->
         <section>
@@ -330,8 +366,8 @@
             </h2>
             <h2>The template</h2>
             <a
-              target="_blank"
               href="https://jupyter-book.github.io/workshop-template/"
+              data-preview-link
               >jupyter-book.github.io/workshop-template</a
             >
             <!-- prettier-ignore -->
@@ -352,8 +388,8 @@
             </h2>
             <h2>Set up your project</h2>
             <a
-              target="_blank"
               href="https://jupyter-book.github.io/workshop-template/setup/"
+              data-preview-link
               >jupyter-book.github.io/workshop-template/setup</a
             >
             <p>We recommend the <strong>entirely local</strong> route</p>
@@ -444,7 +480,12 @@
             ></i>
           </h2>
           <h2>Jupyter Book Fundamentals</h2>
-          <h3>Lesson 2</h3>
+          <a
+            href="https://jupyter-book.github.io/workshop-template/firstedit/"
+            data-preview-link
+          >
+            Lesson 2
+          </a>
           <blockquote>
             The basics of structuring and writing a Jupyter Book
           </blockquote>
@@ -459,11 +500,21 @@
             ></i>
           </h2>
           <h2>More content</h2>
-          <h3>Lesson 3</h3>
+          <a
+            href="https://jupyter-book.github.io/workshop-template/nextstep/"
+            data-preview-link
+          >
+            Lesson 3
+          </a>
           <blockquote>
             Using directives and roles to create richer documents
           </blockquote>
-          <h3>Lesson 4</h3>
+          <a
+            href="https://jupyter-book.github.io/workshop-template/reuse/"
+            data-preview-link
+          >
+            Lesson 4
+          </a>
           <blockquote>Sharing and reusing content</blockquote>
         </section>
         <!-- BREAK -->
@@ -481,7 +532,12 @@
             ></i>
           </h2>
           <h2>Executable content</h2>
-          <h3>Lesson 5</h3>
+          <a
+            href="https://jupyter-book.github.io/workshop-template/executable/"
+            data-preview-link
+          >
+            Lesson 5
+          </a>
           <blockquote>
             Adding the outputs of notebooks and code cells to our projects
           </blockquote>
@@ -496,7 +552,12 @@
             ></i>
           </h2>
           <h2>Build a PDF</h2>
-          <h3>Lesson 7</h3>
+          <a
+            href="https://jupyter-book.github.io/workshop-template/pdfoverview/"
+            data-preview-link
+          >
+            Lesson 7
+          </a>
           <blockquote>Output documents for print or publishing</blockquote>
         </section>
         <!-- LISTENING: Advanced features and hacking on MyST -->
@@ -939,15 +1000,17 @@ YAML
         <section>
           <section data-auto-animate>
             <h2>The Turing Way Community</h2>
-            <img
-              class="r-stretch"
-              alt="A group of people work together on a stage labelled our community. Some are tending to plants with symbols representing data and version control. A new community member is being welcomed to the team. Text emphasises working together, sharing knowledge and helping eachother."
-              src="static/community.svg"
-            />
-            <blockquote>
-              Community-written handbook for reproducible, ethical and
-              collaborative data science.
-            </blockquote>
+            <a href="https://book.the-turing-way.org" data-preview-link>
+              <img
+                alt="A group of people work together on a stage labelled our community. Some are tending to plants with symbols representing data and version control. A new community member is being welcomed to the team. Text emphasises working together, sharing knowledge and helping eachother."
+                src="static/community.svg"
+                style="height: 8em"
+              />
+              <blockquote>
+                Community-written handbook for reproducible, ethical and
+                collaborative data science.
+              </blockquote>
+            </a>
             <!-- prettier-ignore -->
             <aside data-markdown class="notes">
               - Community-written handbook for reproducible, ethical and collaborative data science
@@ -962,7 +1025,7 @@ YAML
               <li><strong>Mentor</strong> contributors at all levels</li>
               <li>Governance emphasises <strong>community power</strong></li>
               <li><strong>Open</strong> working groups</li>
-              <li>Open governance and decision making</li>
+              <li><strong>Open governance</strong> and decision making</li>
             </ul>
             <!-- prettier-ignore -->
             <aside data-markdown class="notes">
@@ -1020,12 +1083,38 @@ YAML
           <br />
           Pacific Room
         </section>
+        <!-- Thanks and call to action -->
         <section>
           <img
             class="r-stretch"
             alt="Two people hold up a large banner with the word thanks written on it."
             src="static/bannerthanks.svg"
           />
+          <h2>Join The Turing Way Community</h2>
+          <i class="fa-brands fa-slack"></i>
+          <a target="_blank" href="https://slack.the-turing-way.org"
+            >slack.the-turing-way.org</a
+          >
+          <br />
+          <i class="fa-solid fa-book"></i>
+          <a target="_blank" href="https://book.the-turing-way.org"
+            >book.the-turing-way.org</a
+          >
+          <br />
+          <i class="fa-solid fa-newspaper"></i>
+          <a target="_blank" href="https://news.the-turing-way.org"
+            >news.the-turing-way.org</a
+          >
+          <br />
+          <i class="fa-brands fa-github"></i>
+          <a target="_blank" href="https://git.the-turing-way.org"
+            >git.the-turing-way.org</a
+          >
+          <br />
+          <i class="fa-solid fa-calendar-days"></i>
+          <a target="_blank" href="https://calendar.the-turing-way.org"
+            >calendar.the-turing-way.org</a
+          >
           <h2>Feedback survey</h2>
         </section>
       </div>
