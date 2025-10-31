@@ -126,10 +126,11 @@
           <h2>Installing Jupyter Book</h2>
           <p>
             <a
-              target="_blank"
               href="https://next.jupyterbook.org/start/install/"
-              >next.jupyterbook.org/start/install</a
+              data-preview-link
             >
+              next.jupyterbook.org/start/install
+            </a>
           </p>
           <img
             class="r-stretch"
@@ -326,8 +327,8 @@
             </h2>
             <h2>The template</h2>
             <a
-              target="_blank"
               href="https://jupyter-book.github.io/workshop-template/"
+              data-preview-link
               >jupyter-book.github.io/workshop-template</a
             >
             <!-- prettier-ignore -->
@@ -348,8 +349,8 @@
             </h2>
             <h2>Set up your project</h2>
             <a
-              target="_blank"
               href="https://jupyter-book.github.io/workshop-template/setup/"
+              data-preview-link
               >jupyter-book.github.io/workshop-template/setup</a
             >
             <p>We recommend the <strong>entirely local</strong> route</p>
@@ -386,7 +387,12 @@
             ></i>
           </h2>
           <h2>Jupyter Book Fundamentals</h2>
-          <h3>Lesson 2</h3>
+          <a
+            href="https://jupyter-book.github.io/workshop-template/firstedit/"
+            data-preview-link
+          >
+            Lesson 2
+          </a>
           <blockquote>
             The basics of structuring and writing a Jupyter Book
           </blockquote>
@@ -401,11 +407,21 @@
             ></i>
           </h2>
           <h2>More content</h2>
-          <h3>Lesson 3</h3>
+          <a
+            href="https://jupyter-book.github.io/workshop-template/nextstep/"
+            data-preview-link
+          >
+            Lesson 3
+          </a>
           <blockquote>
             Using directives and roles to create richer documents
           </blockquote>
-          <h3>Lesson 4</h3>
+          <a
+            href="https://jupyter-book.github.io/workshop-template/reuse/"
+            data-preview-link
+          >
+            Lesson 4
+          </a>
           <blockquote>Sharing and reusing content</blockquote>
         </section>
         <!-- BREAK -->
@@ -423,7 +439,12 @@
             ></i>
           </h2>
           <h2>Executable content</h2>
-          <h3>Lesson 5</h3>
+          <a
+            href="https://jupyter-book.github.io/workshop-template/executable/"
+            data-preview-link
+          >
+            Lesson 5
+          </a>
           <blockquote>
             Adding the outputs of notebooks and code cells to our projects
           </blockquote>
@@ -438,7 +459,12 @@
             ></i>
           </h2>
           <h2>Build a PDF</h2>
-          <h3>Lesson 7</h3>
+          <a
+            href="https://jupyter-book.github.io/workshop-template/pdfoverview/"
+            data-preview-link
+          >
+            Lesson 7
+          </a>
           <blockquote>Output documents for print or publishing</blockquote>
         </section>
         <!-- LISTENING: Advanced features and hacking on MyST -->
@@ -881,15 +907,17 @@ YAML
         <section>
           <section data-auto-animate>
             <h2>The Turing Way Community</h2>
-            <img
-              class="r-stretch"
-              alt="A group of people work together on a stage labelled our community. Some are tending to plants with symbols representing data and version control. A new community member is being welcomed to the team. Text emphasises working together, sharing knowledge and helping eachother."
-              src="static/community.svg"
-            />
-            <blockquote>
-              Community-written handbook for reproducible, ethical and
-              collaborative data science.
-            </blockquote>
+            <a href="https://book.the-turing-way.org" data-preview-link>
+              <img
+                alt="A group of people work together on a stage labelled our community. Some are tending to plants with symbols representing data and version control. A new community member is being welcomed to the team. Text emphasises working together, sharing knowledge and helping eachother."
+                src="static/community.svg"
+                style="height: 8em"
+              />
+              <blockquote>
+                Community-written handbook for reproducible, ethical and
+                collaborative data science.
+              </blockquote>
+            </a>
             <!-- prettier-ignore -->
             <aside data-markdown class="notes">
               - Community-written handbook for reproducible, ethical and collaborative data science
@@ -904,7 +932,7 @@ YAML
               <li><strong>Mentor</strong> contributors at all levels</li>
               <li>Governance emphasises <strong>community power</strong></li>
               <li><strong>Open</strong> working groups</li>
-              <li>Open governance and decision making</li>
+              <li><strong>Open governance</strong> and decision making</li>
             </ul>
             <!-- prettier-ignore -->
             <aside data-markdown class="notes">
