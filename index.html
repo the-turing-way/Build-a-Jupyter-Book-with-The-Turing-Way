@@ -56,8 +56,13 @@
           filter: none;
         }
       }
+      .fragment.highlight {
+          &.current-fragment {
+              color: var(--jp-orange);
+          }
+      }
       strong {
-        color: #17ff2e;
+        color: var(--jp-orange);
       }
 
       :root {
@@ -191,19 +196,19 @@
                 <h4>Executable content</h4>
                 <ul>
                   <li
-                    class="fragment highlight-current-green"
+                    class="fragment custom highlight"
                     data-fragment-index="1"
                   >
                     Jupyter Notebooks
                   </li>
                   <li
-                    class="fragment highlight-current-green"
+                    class="fragment custom highlight"
                     data-fragment-index="2"
                   >
                     <code>code-cell</code> blocks in Markdown
                   </li>
                   <li
-                    class="fragment highlight-current-green"
+                    class="fragment custom highlight"
                     data-fragment-index="3"
                   >
                     Inline statements using <code>eval</code> in Markdown
