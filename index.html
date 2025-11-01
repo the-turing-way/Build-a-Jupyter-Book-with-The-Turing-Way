@@ -47,6 +47,15 @@
           flex: auto;
           overflow-x: auto;
         }
+        &.container {
+          display: grid;
+          grid-template-columns: auto auto auto auto;
+          & div {
+            border: 3px solid var(--jp-orange);
+            padding: 5px;
+            text-align: center;
+          }
+        }
       }
       .fragment.blur {
         /* Blur fragment */
@@ -123,14 +132,48 @@
         </section>
         <!-- Introduction to presenters -->
         <section>
-          <img src="static/angus.jpg" width="200px" />
-          <img src="static/arielle.jpg" width="200px" />
-          <img src="static/chris.jpg" width="200px" />
-          <img src="static/franklin.jpg" width="200px" />
-          <img src="static/jim.jpg" width="200px" />
-          <img src="static/kirstie.jpg" width="200px" />
-          <img src="static/robert.jpg" width="200px" />
-          <img src="static/rowan.png" width="200px" />
+          <div class="container">
+            <div>
+              <img src="static/angus.jpg" width="200" />
+              <br />
+              Angus
+            </div>
+            <div>
+              <img src="static/arielle.jpg" width="200" />
+              <br />
+              Arielle
+            </div>
+            <div>
+              <img src="static/chris.jpg" width="200" />
+              <br />
+              Chris
+            </div>
+            <div>
+              <img src="static/franklin.jpg" width="200" />
+              <br />
+              Franklin
+            </div>
+            <div>
+              <img src="static/jim.jpg" width="200" />
+              <br />
+              Jim
+            </div>
+            <div>
+              <img src="static/kirstie.jpg" width="200" />
+              <br />
+              Kirstie
+            </div>
+            <div>
+              <img src="static/robert.jpg" width="200" />
+              <br />
+              Robert
+            </div>
+            <div>
+              <img src="static/rowan.png" width="200" />
+              <br />
+              Rowan
+            </div>
+          </div>
         </section>
         <!-- Early prompt to install, can be done during introduction slides -->
         <section data-visibility="hidden">
