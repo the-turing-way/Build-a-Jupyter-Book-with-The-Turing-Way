@@ -119,93 +119,140 @@
   <body>
     <div class="reveal">
       <div class="slides">
-        <!-- Title slide -->
         <section>
-          <h1 class="r-fit-text">
-            Build a Jupyter Book <br />with The Turing Way
-          </h1>
-          <img
-            class="r-stretch"
-            alt="Two smiling people, with outstretched arms, stand infront of banner text saying welcome! The text is sorrounded by marks implying lights and fireworks."
-            src="static/bannerwelcome.svg"
-          />
-        </section>
-        <!-- Introduction to presenters -->
-        <section>
-          <div class="container">
-            <div>
-              <img
-                src="static/angus.jpg"
-                alt="Photograph of Angus."
-                width="200"
-              />
-              <br />
-              Angus
+          <!-- Title slide -->
+          <section>
+            <h1 class="r-fit-text">
+              Build a Jupyter Book <br />with The Turing Way
+            </h1>
+            <img
+              class="r-stretch"
+              alt="Two smiling people, with outstretched arms, stand infront of banner text saying welcome! The text is sorrounded by marks implying lights and fireworks."
+              src="static/bannerwelcome.svg"
+            />
+          </section>
+          <!-- Introduction to presenters -->
+          <section>
+            <div class="container">
+              <div>
+                <img
+                  src="static/angus.jpg"
+                  alt="Photograph of Angus."
+                  width="200"
+                />
+                <br />
+                Angus
+              </div>
+              <div>
+                <img
+                  src="static/arielle.jpg"
+                  alt="Photograph of Arielle."
+                  width="200"
+                />
+                <br />
+                Arielle
+              </div>
+              <div>
+                <img
+                  src="static/chris.jpg"
+                  alt="Headshot of Chris Holdgraf, a smiling man with short blondish-brown hair and a beard, wearing a blue patterned shirt against a gray background."
+                  width="200"
+                />
+                <br />
+                Chris
+              </div>
+              <div>
+                <img
+                  src="static/franklin.jpg"
+                  alt="Photograph of Franklin."
+                  width="200"
+                />
+                <br />
+                Franklin
+              </div>
+              <div>
+                <img
+                  src="static/jim.jpg"
+                  alt="Photograph of Jim, a white man in his 30s. He has very short fair hair and a short beard. He is wearing headphones and taking the photograph using his camera and a mirror."
+                  width="200"
+                />
+                <br />
+                Jim
+              </div>
+              <div>
+                <img
+                  src="static/kirstie.jpg"
+                  alt="Photograph of Kirstie."
+                  width="200"
+                />
+                <br />
+                Kirstie
+              </div>
+              <div>
+                <img
+                  src="static/robert.jpg"
+                  alt="Photograph of Robert."
+                  width="200"
+                />
+                <br />
+                Robert
+              </div>
+              <div>
+                <img
+                  src="static/rowan.png"
+                  alt="Photograph of Rowan."
+                  width="200"
+                />
+                <br />
+                Rowan
+              </div>
             </div>
-            <div>
-              <img
-                src="static/arielle.jpg"
-                alt="Photograph of Arielle."
-                width="200"
-              />
-              <br />
-              Arielle
-            </div>
-            <div>
-              <img
-                src="static/chris.jpg"
-                alt="Headshot of Chris Holdgraf, a smiling man with short blondish-brown hair and a beard, wearing a blue patterned shirt against a gray background."
-                width="200"
-              />
-              <br />
-              Chris
-            </div>
-            <div>
-              <img
-                src="static/franklin.jpg"
-                alt="Photograph of Franklin."
-                width="200"
-              />
-              <br />
-              Franklin
-            </div>
-            <div>
-              <img
-                src="static/jim.jpg"
-                alt="Photograph of Jim, a white man in his 30s. He has very short fair hair and a short beard. He is wearing headphones and taking the photograph using his camera and a mirror."
-                width="200"
-              />
-              <br />
-              Jim
-            </div>
-            <div>
-              <img
-                src="static/kirstie.jpg"
-                alt="Photograph of Kirstie."
-                width="200"
-              />
-              <br />
-              Kirstie
-            </div>
-            <div>
-              <img
-                src="static/robert.jpg"
-                alt="Photograph of Robert."
-                width="200"
-              />
-              <br />
-              Robert
-            </div>
-            <div>
-              <img
-                src="static/rowan.png"
-                alt="Photograph of Rowan."
-                width="200"
-              />
-              <br />
-              Rowan
-            </div>
-          </div>
+          </section>
+          <!-- Schedule -->
+          <section>
+            <table style="font-size: 36px">
+              <tr>
+                <th>Time</th>
+                <th>Activity</th>
+              </tr>
+              <tr>
+                <td>09:00</td>
+                <td>Introduction</td>
+              </tr>
+              <tr>
+                <td>09:20</td>
+                <td>Installation</td>
+              </tr>
+              <tr>
+                <td>09:30</td>
+                <td>Jupyter Book Showcase</td>
+              </tr>
+              <tr>
+                <td>09:45</td>
+                <td>Jupyter Book Fundamentals</td>
+              </tr>
+              <tr>
+                <td>10:30</td>
+                <td>Coffee Break ☕️</td>
+              </tr>
+              <tr>
+                <td>10:45</td>
+                <td>Executable Content and Building a PDF</td>
+              </tr>
+              <tr>
+                <td>11:20</td>
+                <td>Advanced MyST Showcase</td>
+              </tr>
+              <tr>
+                <td>11:40</td>
+                <td>Join us!</td>
+              </tr>
+              <tr>
+                <td>12:00</td>
+                <td>Close and Lunch 🍽️</td>
+              </tr>
+            </table>
+          </section>
         </section>
         <!-- Early prompt to install, can be done during introduction slides -->
         <section data-visibility="hidden">
@@ -274,6 +321,35 @@
                       - Videos
                   - More …
               - Source is written in MyST Markdown (an extension of common mark) or Jupyter Notebook
+            </aside>
+          </section>
+          <section data-auto-animate>
+            <h2>Jupyter Book</h2>
+            <h3>Superpowers</h3>
+            <ul>
+              <li>Simple to use, easy for <strong>users</strong> to extend</li>
+              <li>
+                Simple to use, easy for <strong>developers</strong> to extend
+              </li>
+              <li>
+                Content that is <strong>canonical</strong> and
+                <strong>machine readable</strong>
+              </li>
+              <li>
+                Content that is <strong>modular</strong> and
+                <strong>composable</strong>
+              </li>
+              <li><strong>Computation</strong> as a first-class citizen</li>
+              <li>Led by an <strong>open community</strong></li>
+            </ul>
+            <!-- prettier-ignore -->
+            <aside data-markdown class="notes">
+              - Clear MyST Markdown syntax, based on Common mark with directives and roles
+              - Manipulating AST lets you easily build new features (on top of built in)
+              - Structured data, JSON describing the document semantics. Can easily be reused to build different outputs
+              - Content "blocks" can be referenced and resused, even between projects
+              - Computational content sits equally alongside prose
+              - Open community, governance, roadmap
             </aside>
           </section>
           <section data-auto-animate>
@@ -348,7 +424,7 @@
                   - Presenting research in a reproducible format
             </aside>
           </section>
-          <section data-auto-animate>
+          <section data-auto-animate data-visibility="hidden">
             <h2>Jupyter Book</h2>
             <h3>More features!</h3>
             <ul>
@@ -407,13 +483,13 @@
             <a href="https://doi.org/10.25080/hwcj9957" target="_blank"
               >doi: 10.25080/hwcj9957</a
             >
-          </section>
-          <!-- prettier-ignore -->
-          <aside data-markdown class="notes">
+            <!-- prettier-ignore -->
+            <aside data-markdown class="notes">
               - Paper at SciPy 2025
               - First production release this week
               - Talk Tuesday at 11:00 introducing the new major version
             </aside>
+          </section>
         </section>
         <!-- LISTENING: Introduction to The Turing Way -->
         <section>
@@ -1082,11 +1158,11 @@ YAML
                 src="static/community.svg"
                 style="height: 8em"
               />
-              <blockquote>
-                Community-written handbook for reproducible, ethical and
-                collaborative data science.
-              </blockquote>
             </a>
+            <blockquote>
+              Community-written handbook for reproducible, ethical and
+              collaborative data science.
+            </blockquote>
             <!-- prettier-ignore -->
             <aside data-markdown class="notes">
               - Community-written handbook for reproducible, ethical and collaborative data science
@@ -1144,6 +1220,34 @@ YAML
                   - work together
                   - share our achievements
             </aside>
+          </section>
+          <section data-auto-animate>
+            <h2>The Turing Way Community</h2>
+            <h3>Where to find us</h3>
+            <i class="fa-brands fa-slack"></i>
+            <a target="_blank" href="https://slack.the-turing-way.org"
+              >slack.the-turing-way.org</a
+            >
+            <br />
+            <i class="fa-solid fa-book"></i>
+            <a target="_blank" href="https://book.the-turing-way.org"
+              >book.the-turing-way.org</a
+            >
+            <br />
+            <i class="fa-solid fa-newspaper"></i>
+            <a target="_blank" href="https://news.the-turing-way.org"
+              >news.the-turing-way.org</a
+            >
+            <br />
+            <i class="fa-brands fa-github"></i>
+            <a target="_blank" href="https://git.the-turing-way.org"
+              >git.the-turing-way.org</a
+            >
+            <br />
+            <i class="fa-solid fa-calendar-days"></i>
+            <a target="_blank" href="https://calendar.the-turing-way.org"
+              >calendar.the-turing-way.org</a
+            >
           </section>
         </section>
         <section>
