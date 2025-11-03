@@ -47,6 +47,15 @@
           flex: auto;
           overflow-x: auto;
         }
+        &.container {
+          display: grid;
+          grid-template-columns: auto auto auto auto;
+          & div {
+            border: 3px solid var(--jp-orange);
+            padding: 5px;
+            text-align: center;
+          }
+        }
       }
       .fragment.blur {
         /* Blur fragment */
@@ -124,14 +133,80 @@
           </section>
           <!-- Introduction to presenters -->
           <section>
-            <img src="static/angus.jpg" width="200" />
-            <img src="static/arielle.jpg" width="200" />
-            <img src="static/chris.jpg" width="200" />
-            <img src="static/franklin.jpg" width="200" />
-            <img src="static/jim.jpg" width="200" />
-            <img src="static/kirstie.jpg" width="200" />
-            <img src="static/robert.jpg" width="200" />
-            <img src="static/rowan.png" width="200" />
+            <div class="container">
+              <div>
+                <img
+                  src="static/angus.jpg"
+                  alt="Headshot of Angus, a smiling white man in his late, late twenties with stubble and medium length dark brown hair. He is wearing a mustard orange jumper and standing against a cream background."
+                  width="200"
+                />
+                <br />
+                Angus
+              </div>
+              <div>
+                <img
+                  src="static/arielle.jpg"
+                  alt="Photograph of Arielle Bennett, a white woman with black framed glasses, brown hair and red lipstick, wearing a green jumper, with a conference presentation just visible in the background"
+                  width="200"
+                />
+                <br />
+                Arielle
+              </div>
+              <div>
+                <img
+                  src="static/chris.jpg"
+                  alt="Headshot of Chris Holdgraf, a smiling man with short blondish-brown hair and a beard, wearing a blue patterned shirt against a gray background."
+                  width="200"
+                />
+                <br />
+                Chris
+              </div>
+              <div>
+                <img
+                  src="static/franklin.jpg"
+                  alt="Photograph of Franklin."
+                  width="200"
+                />
+                <br />
+                Franklin
+              </div>
+              <div>
+                <img
+                  src="static/jim.jpg"
+                  alt="Photograph of Jim, a white man in his 30s. He has very short fair hair and a short beard. He is wearing headphones and taking the photograph using his camera and a mirror."
+                  width="200"
+                />
+                <br />
+                Jim
+              </div>
+              <div>
+                <img
+                  src="static/kirstie.jpg"
+                  alt="Photograph of Kirstie - a white woman in her 40s - and her daughter Mackenzie who was 2 at the time. They are hiking up a green, grassy hill in the Lake District in the UK. Mackenzie is in a backpack looking over Kirstie's shoulder. They both have blonde hair and are smiling at the camera."
+                  width="200"
+                />
+                <br />
+                Kirstie
+              </div>
+              <div>
+                <img
+                  src="static/robert.jpg"
+                  alt="Photograph of Robert, a white man in his late 30s. He has graying dark brown hair and a beard, is wearing glasses and a green shirt."
+                  width="200"
+                />
+                <br />
+                Robert
+              </div>
+              <div>
+                <img
+                  src="static/rowan.png"
+                  alt="Photograph of Rowan."
+                  width="200"
+                />
+                <br />
+                Rowan
+              </div>
+            </div>
           </section>
           <!-- Schedule -->
           <section>
