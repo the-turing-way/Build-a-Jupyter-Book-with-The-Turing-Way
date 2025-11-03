@@ -94,6 +94,10 @@
           blink-caret 0.75s step-end infinite;
       }
 
+      .emph-first-letter *::first-letter {
+        color: var(--jp-orange);
+      }
+
       /* The typing effect */
       @keyframes typing {
         from {
@@ -731,7 +735,9 @@
             </h3>
             <p class="fragment">
               Take the glossary URL<br />
-              <a href="https://book.the-turing-way.org/afterword/glossary/"
+              <a
+                href="https://book.the-turing-way.org/afterword/glossary/"
+                data-preview-link
                 >book.the-turing-way.org/afterword/glossary/</a
               >
             </p>
@@ -757,8 +763,9 @@
                   "sha256": "4347650f55c9dd2731a58abd686252ceee472e608780998c6bd3f2ec25e6c3de",
                   "slug": "afterword.glossary",
                   "location": "/afterword/glossary.md",
-                  "dependencies": [],
                   "frontmatter": {
+                  ...
+                  "mdast": {
                   ...
 
                      </code></pre>
@@ -1001,19 +1008,30 @@ YAML
               Let's write a plugin that replaces em-dashes with two hyphens!
             </p>
           </section>
-          <section>
+          <section data-auto-animate>
+            <h3>First, our document</h3>
             <p class="typewriter" style="font-size: 0.25em">
               Got it -- I'll help you to write your PhD thesis on nuclear
               structure in the style of a sleep-deprived badger.
             </p>
-            <p class="fragment">
+            <p>
               Nuclear structure is — yawn — a highly complex field. Badgers
               don't understand nuclear physics.
             </p>
             <img
               src="https://www.weizmann.ac.il/complex/poddubny/sites/complex.poddubny/files/2025-02/cover6_2.jpg"
+              style="max-width: 80%"
               alt="A badger swimming with various physics phenomena overlayed"
+              class="fragment"
             />
+            <p>
+              <a
+                href="https://mystmd.org/sandbox?tab=ast&myst=TgB1AGMAbABlAGEAcgAgAHMAdAByAHUAYwB0AHUAcgBlACAAaQBzACAAFCAgAHkAYQB3AG4AIAAUICAAYQAgAGgAaQBnAGgAbAB5ACAAYwBvAG0AcABsAGUAeAAgAGYAaQBlAGwAZAAuACAAQgBhAGQAZwBlAHIAcwAgAGQAbwBuACcAdAAgAHUAbgBkAGUAcgBzAHQAYQBuAGQAIABuAHUAYwBsAGUAYQByACAAcABoAHkAcwBpAGMAcwAuAAoACgAhAFsAQQAgAGIAYQBkAGcAZQByACAAcwB3AGkAbQBtAGkAbgBnACAAdwBpAHQAaAAgAHYAYQByAGkAbwB1AHMAIABwAGgAeQBzAGkAYwBzACAAcABoAGUAbgBvAG0AZQBuAGEAIABvAHYAZQByAGwAYQB5AGUAZABdACgAaAB0AHQAcABzADoALwAvAHcAdwB3AC4AdwBlAGkAegBtAGEAbgBuAC4AYQBjAC4AaQBsAC8AYwBvAG0AcABsAGUAeAAvAHAAbwBkAGQAdQBiAG4AeQAvAHMAaQB0AGUAcwAvAGMAbwBtAHAAbABlAHgALgBwAG8AZABkAHUAYgBuAHkALwBmAGkAbABlAHMALwAyADAAMgA1AC0AMAAyAC8AYwBvAHYAZQByADYAXwAyAC4AagBwAGcAKQA%3D"
+                class="fragment"
+                data-preview-link
+                >Take me to your lede</a
+              >
+            </p>
           </section>
           <section>
             <pre><code data-trim class="language-javascript">
@@ -1097,6 +1115,46 @@ YAML
               - It computes the estimates and adds a total.
             </aside>
           </section>
+        </section>
+        <section data-auto-animate>
+          <h3>Plugins can make your life easier</h3>
+          <pre
+            class="code-wrapper"
+            data-preview-image="static/table-plugin.png"
+          >
+            <code data-trim class="language-markdown hljs" data-preview-link="https://blog.jupyterbook.org/">
+            :::{blog-posts}
+            :::
+            </code>
+            </pre>
+          <a
+            href="https://github.com/jupyter-book/blog-plugin/blob/main/plugin.ts"
+            class="fragment"
+            >Go to the source code</a
+          >
+          <!-- prettier-ignore -->
+          <aside data-markdown class="notes">
+              - Here's an example of a generative directive:
+                - It looks at the source files and compiles a date-ordered series of cards with short titles.
+                - This enables us to build out new functionality as content rather than app
+            </aside>
+        </section>
+        <section>
+          <h3>Introducing the Haiku of Demos</h3>
+          <ul class="emph-first-letter">
+            <li>Do the demo live.</li>
+            <li>Encounter complications.</li>
+            <li>Maybe have regret.</li>
+            <li style="margin-top: 4em">Oh No.</li>
+          </ul>
+          <!-- prettier-ignore -->
+          <aside data-markdown class="notes">
+              It's all well and good showing things and talking about it, but let's actually see how quickly we can get a demo together.
+          </aside>
+        </section>
+        <section>
+          <h3>Separating structured data from presentation</h3>
+          Another DEMO? I think so!
         </section>
         <!-- LISTENING: Wrap up and call to action -->
         <section>
